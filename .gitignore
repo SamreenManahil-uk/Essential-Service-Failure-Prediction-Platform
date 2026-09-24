@@ -1,0 +1,48 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+backend/EssentialService.Api/appsettings.Local.json
+
+# Local secrets
+.env
+.env.*
+!.env.example
+backend/EssentialService.Api/appsettings.Local.json
+
+# Backup files
+*.before-*
+*.backup
+*.bak
+frontend-backups/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# .NET
+**/bin/
+**/obj/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# macOS
+.DS_Store
+
+# Local database backups
+backups/
+
+# Docker files not used in this project
+compose.yml
+**/Dockerfile
+**/.dockerignore
+
+# Docker not included in this project
+infrastructure/kafka/docker-compose.yml
+compose.yml
+**/Dockerfile
+**/.dockerignore

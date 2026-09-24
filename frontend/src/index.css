@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+  background: #060910;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+}
+
+.command-bg {
+  background:
+    radial-gradient(circle at 75% 0%, rgba(8,145,178,.13), transparent 27rem),
+    radial-gradient(circle at 15% 75%, rgba(99,102,241,.10), transparent 25rem),
+    #060910;
+}
+
+.arctic-bg {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(14,165,233,.11), transparent 30rem),
+    radial-gradient(circle at 10% 80%, rgba(99,102,241,.07), transparent 25rem),
+    #f3f7fb;
+}
+
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(148,163,184,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* AEGISGRID FINAL DARK THEME FIX */
+
+/*
+   ThemeProvider sets:
+   <html data-theme="dark">
+   These selectors make nested/helper controls reliable even if
+   Tailwind's dark variant configuration differs.
+*/
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Remove accidental white surfaces inside authenticated application */
+html[data-theme="dark"] body {
+  background: #030914;
+}
+
+/* Form controls */
+html[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
+html[data-theme="dark"] select,
+html[data-theme="dark"] textarea {
+  color: #f8fafc;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: #64748b;
+}
+
+/*
+   Intelligence telemetry input controls.
+   These are deliberately scoped to the intelligence route's
+   white Tailwind input surface classes.
+*/
+html[data-theme="dark"] .bg-white input {
+  color: inherit;
+}
+
+/* Better native autofill appearance */
+html[data-theme="dark"] input:-webkit-autofill,
+html[data-theme="dark"] input:-webkit-autofill:hover,
+html[data-theme="dark"] input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f8fafc;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/* Scrollbars for operational dark UI */
+html[data-theme="dark"] {
+  scrollbar-color: #26344c #07101f;
+}
+
+/* =========================================================
+   AEGISGRID — FINAL DARK MODE SURFACE OVERRIDES
+   ========================================================= */
+
+html[data-theme="dark"] .aegis-dark-card {
+  background: #0b1424 !important;
+  border-color: #1e293b !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .aegis-dark-input {
+  background: #07101f !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .aegis-dark-input input {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] .aegis-dark-input input::placeholder {
+  color: #64748b !important;
+}
+
+html[data-theme="dark"] .aegis-dark-card-muted {
+  color: #94a3b8 !important;
+}

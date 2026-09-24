@@ -1,0 +1,14 @@
+{
+  "model": "XGBoost",
+  "features": [
+    "Type",
+    "Air temperature",
+    "Process temperature",
+    "Rotational speed",
+    "Torque",
+    "Tool wear"
+  ],
+  "target": "Machine failure",
+  "cross_validation": "5-fold StratifiedKFold",
+  "selection_metric": "F1"
+}
